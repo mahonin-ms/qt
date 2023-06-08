@@ -1,0 +1,23 @@
+#!/bin/bash
+
+clean(){
+    local _path="$1"
+    
+    echo -e "clear ${_path}"
+    rm -rf ${_path}/Makefile
+    rm -rf ${_path}/CMakeCache.txt
+    rm -rf ${_path}/cmake_install.cmake
+    rm -rf ${_path}/CMakeLists.txt.user
+    rm -rf ${_path}/CMakeFiles/
+    
+}
+
+clean "./tlv_srv"
+clean "./libs/common"
+clean "./libs"
+
+
+echo -e "clear shared_libs"
+rm -rf ./shared_libs/*
+mkdir ./shared_libs/headers
+
